@@ -1,17 +1,22 @@
-import axios from "axios";
+"use server";
+
+import dbConnect from "@/lib/dbConnect";
 
 export default async function Products() {
-  const fetchProducts = async () => {
-    try {
-      const { data } = await axios.get("/data.json");
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const data = await dbConnect(process.env.DB_COLLECTION)
+  // console.log(data)
+  // const fetchProducts = async () => {
+  //   try {
+  //     const data = await fetch("data.json");
+  //     const res = await data.json();
+  //     return res;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const products = await fetchProducts();
-  console.log(products);
+  // const products = await fetchProducts();
+  // console.log(products);
 
   return (
     <div>
